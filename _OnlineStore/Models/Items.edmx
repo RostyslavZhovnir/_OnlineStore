@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="myMagazModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Items">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Description" Type="nchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="Source" Type="nchar" MaxLength="1000" />
+          <Property Name="im1" Type="nchar" MaxLength="200" />
+          <Property Name="im2" Type="nchar" MaxLength="200" />
+          <Property Name="im3" Type="nchar" MaxLength="200" />
+          <Property Name="im4" Type="nchar" MaxLength="200" />
+          <Property Name="im5" Type="nchar" MaxLength="200" />
+          <Property Name="Category" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fName" Type="nvarchar" MaxLength="500" />
+          <Property Name="lName" Type="nvarchar" MaxLength="500" />
+          <Property Name="phone" Type="int" />
+          <Property Name="email" Type="nvarchar" MaxLength="500" />
+          <Property Name="city" Type="nvarchar" MaxLength="500" />
+          <Property Name="bldNumb" Type="nvarchar" MaxLength="500" />
+          <Property Name="street" Type="nvarchar" MaxLength="500" />
+          <Property Name="zip" Type="int" />
+          <Property Name="country" Type="nvarchar" MaxLength="500" />
+          <Property Name="aptNumb" Type="nvarchar" MaxLength="500" />
+          <Property Name="Skype" Type="nvarchar" MaxLength="500" />
+          <Property Name="Viber" Type="nvarchar" MaxLength="500" />
+          <Property Name="sourceLink" Type="nvarchar" MaxLength="500" />
+          <Property Name="sLink" Type="nvarchar" MaxLength="1000" />
+          <Property Name="sId" Type="int" />
+          <Property Name="sPrice" Type="int" />
+        </EntityType>
+        <EntityContainer Name="myMagazModelStoreContainer">
+          <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="myMagazModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Items">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="Source" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+          <Property Name="im1" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="im2" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="im3" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="im4" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="im5" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="Category" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="lName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="Int32" />
+          <Property Name="email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="city" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="bldNumb" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="street" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="zip" Type="Int32" />
+          <Property Name="country" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="aptNumb" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Skype" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Viber" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="sourceLink" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="sLink" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="sId" Type="Int32" />
+          <Property Name="sPrice" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="myMagazEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Items" EntityType="Self.Items" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="myMagazModelStoreContainer" CdmEntityContainer="myMagazEntities">
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="myMagazModel.Items">
+              <MappingFragment StoreEntitySet="Items">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="im1" ColumnName="im1" />
+                <ScalarProperty Name="im2" ColumnName="im2" />
+                <ScalarProperty Name="im3" ColumnName="im3" />
+                <ScalarProperty Name="im4" ColumnName="im4" />
+                <ScalarProperty Name="im5" ColumnName="im5" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="myMagazModel.Orders">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fName" ColumnName="fName" />
+                <ScalarProperty Name="lName" ColumnName="lName" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="bldNumb" ColumnName="bldNumb" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="zip" ColumnName="zip" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="aptNumb" ColumnName="aptNumb" />
+                <ScalarProperty Name="Skype" ColumnName="Skype" />
+                <ScalarProperty Name="Viber" ColumnName="Viber" />
+                <ScalarProperty Name="sourceLink" ColumnName="sourceLink" />
+                <ScalarProperty Name="sLink" ColumnName="sLink" />
+                <ScalarProperty Name="sId" ColumnName="sId" />
+                <ScalarProperty Name="sPrice" ColumnName="sPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
