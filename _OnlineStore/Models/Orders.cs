@@ -17,7 +17,7 @@ namespace _OnlineStore.Models
         public int id { get; set; }
         public string fName { get; set; }
         public string lName { get; set; }
-        public Nullable<int> phone { get; set; }
+        public string phone { get; set; }
         public string email { get; set; }
         public string city { get; set; }
         public string bldNumb { get; set; }
